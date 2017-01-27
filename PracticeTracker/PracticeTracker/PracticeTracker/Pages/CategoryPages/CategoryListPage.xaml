@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Categories"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeTracker.Pages.CategoryPages.CategoryListPage"
+             BackgroundColor="White">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_search.png" Text="Search" Clicked="btnSearchToggle_Clicked" Order="Primary"/>
+  </ContentPage.ToolbarItems>
+  <StackLayout>
+    <SearchBar Placeholder="Search..." TextChanged="Search_TextChanged" IsVisible="false" x:Name="txtSearch"/>
+    <ActivityIndicator x:Name="LoadingIndicator" IsRunning="true" IsVisible="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    <ListView x:Name="lstCategories" RowHeight="125" IsVisible="false">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout VerticalOptions="Center" Margin="13,20">
+              <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+</ContentPage>

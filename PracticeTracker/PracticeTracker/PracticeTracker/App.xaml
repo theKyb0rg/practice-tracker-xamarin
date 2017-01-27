@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PracticeTracker.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <!--Global Style-->
+      <Color x:Key="GlobalTextColor">#333333</Color>
+
+      <Style x:Key="CommentsButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Orange" />
+        <Setter Property="WidthRequest">
+          <OnPlatform x:TypeArguments="x:Double" Android="60" WinPhone="80"/>
+        </Setter>
+      </Style>
+      
+      <Style x:Key="EditButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#d6d7d7" />
+        <Setter Property="WidthRequest">
+          <OnPlatform x:TypeArguments="x:Double" Android="60" WinPhone="80"/>
+        </Setter>
+      </Style>
+      
+      <Style x:Key="DeleteButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="WidthRequest">
+          <OnPlatform x:TypeArguments="x:Double" Android="60" WinPhone="80"/>
+        </Setter>
+      </Style>
+
+      <Style x:Key="StatisticsButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#2196F3" />
+        <Setter Property="WidthRequest">
+          <OnPlatform x:TypeArguments="x:Double" Android="60" WinPhone="80"/>
+        </Setter>
+      </Style>
+      
+      <Style x:Key="AddButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#4CAF50" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      </Style>
+      
+      <Style x:Key="ResetButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#d6d7d7" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      </Style>
+      
+      <Style x:Key="TableViewStyle" TargetType="TableView">
+        <Setter Property="RowHeight" Value="75"/>
+      </Style>
+
+      <Style x:Key="V-Center-H-FillAndExpand" TargetType="TableView">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+      </Style>
+
+      <Style x:Key="V-Center-H-Center" TargetType="TableView">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+      </Style>
+
+      <Style x:Key="TableViewGridPadding" TargetType="Grid">
+        <Setter Property="Padding" Value="0,0,13,0"/>
+      </Style>
+
+      <Style x:Key="ErrorLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="Red"/>
+      </Style>
+
+      <!--MainPage.xaml-->
+      <Style x:Key="MainPageStackLayout" TargetType="StackLayout">
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Padding" Value="20" />
+      </Style>
+
+      <Style x:Key="MainPageLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="YAlign" Value="Center" />
+        <Setter Property="TextColor" Value="#333333" />
+      </Style>
+
+      <Style x:Key="MainPageGrid" TargetType="Grid">
+        <Setter Property="ColumnSpacing" Value="1" />
+        <Setter Property="RowSpacing" Value="1" />
+        <Setter Property="BackgroundColor" Value="#333333" />
+      </Style>
+
+      <Style x:Key="MainPageImage" TargetType="Image">
+        <Setter Property="Source" Value="ic_arrow.png" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+      </Style>
+
+      <!--ToolPage.xaml-->
+      <Style x:Key="ToolPageEntry" TargetType="Entry">
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+      </Style>
+
+      <Style x:Key="ToolPageLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+      </Style>
+
+      <Style x:Key="ToolPageStartButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Green" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+
+      <Style x:Key="ToolPageStopButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="IsEnabled" Value="false" />
+      </Style>
+
+      <!--StatisticsPage.xaml-->
+
+      <Style x:Key="StatisticsPageStackLayout" TargetType="StackLayout">
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Padding" Value="10,10,10,0" />
+        <Setter Property="BackgroundColor" Value="White" />
+      </Style>
+
+      <Style x:Key="StatisticsPageLabelTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="YAlign" Value="Center" />
+        <Setter Property="TextColor" Value="#333333" />
+      </Style>
+
+      <Style x:Key="StatisticsPageLabelInfo" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="YAlign" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

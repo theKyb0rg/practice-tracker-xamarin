@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Categories"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeTracker.Pages.CategoryPages.CategoryPage"
+             BackgroundColor="White">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_plus.png" Text="New" Clicked="btnAdd_Clicked" Order="Primary"/>
+    <ToolbarItem Icon="ic_search.png" Text="Search" Clicked="btnSearchToggle_Clicked" Order="Primary"/>
+  </ContentPage.ToolbarItems>
+  <StackLayout>
+    <SearchBar Placeholder="Search..." TextChanged="Search_TextChanged" IsVisible="false" x:Name="txtSearch"/>
+    <ActivityIndicator x:Name="LoadingIndicator" IsRunning="true" IsVisible="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    <ListView x:Name="lstCategories" RowHeight="125" ItemTapped="lstCategories_ItemTapped" IsVisible="false">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid Padding="13,0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackLayout Grid.Column="0" VerticalOptions="Center">
+                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="20" TextColor="#333333"/>
+              </StackLayout>
+              <StackLayout Grid.Column="1" VerticalOptions="Center" Orientation="Horizontal" Spacing="0">
+                <Button CommandParameter="{Binding Id}" Clicked="btnEdit_Clicked" Image="ic_edit_file.png" Style="{StaticResource EditButtonStyle}"/>
+                <Button CommandParameter="{Binding Id}" Clicked="btnDelete_Clicked" Image="ic_trash.png" Style="{StaticResource DeleteButtonStyle}"/>
+              </StackLayout>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="0,20,0,0" x:Name="slNoCategories" IsVisible="false">
+      <Label Text="There are no Categories to show."/>
+      <Button Text="Add a Category" Clicked="btnAdd_Clicked" x:Name="btnAdd" BackgroundColor="#d6d7d7"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

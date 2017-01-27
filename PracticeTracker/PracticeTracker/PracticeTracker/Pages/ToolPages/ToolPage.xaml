@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Tools"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeTracker.Pages.ToolPages.ToolPage"
+             BackgroundColor="White">
+  <ScrollView>
+    <Grid BackgroundColor="White">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <StackLayout Grid.Row="0" VerticalOptions="Center" BackgroundColor="White" Padding="20">
+        <Label Text="Metronome" Style="{StaticResource ToolPageLabel}"/>
+        <Entry x:Name="txtMetronome" TextChanged="txtMetronome_TextChanged" Placeholder="120 bpm" Style="{StaticResource ToolPageEntry}"/>
+        <Label FontSize="50" Text="0" x:Name="lblMetronome" HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+          <Button x:Name="btnMetronomeStart" Text="Start" Clicked="btnMetronome_Start" Style="{StaticResource ToolPageStartButton}"/>
+          <Button x:Name="btnMetronomeStop" Text="Stop" Clicked="btnMetronome_Stop" Style="{StaticResource ToolPageStopButton}"/>
+        </StackLayout>
+        <Label Text="Metronome speed required." x:Name="lblMetronomeError" HorizontalOptions="Center" TextColor="Red" IsVisible="false"/>
+      </StackLayout>
+      <StackLayout Grid.Row="1" VerticalOptions="Center" BackgroundColor="White" Padding="10">
+        <Label Text="Timer" Style="{StaticResource ToolPageLabel}"/>
+        <Entry x:Name="txtTimer" Placeholder="15 min" TextChanged="txtTimer_TextChanged" Style="{StaticResource ToolPageEntry}"/>
+        <Label FontSize="50" Text="00:00:00" x:Name="lblTimer" HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+          <Button x:Name="btnTimerStart" Text="Start" Clicked="btnTimer_Start" Style="{StaticResource ToolPageStartButton}"/>
+          <Button x:Name="btnTimerPauseContinue" Text="Pause" Clicked="btnTimer_PauseContinue" BackgroundColor="Orange" TextColor="White" IsEnabled="false"/>
+          <Button x:Name="btnTimerStop" Text="Stop" Clicked="btnTimer_Stop" Style="{StaticResource ToolPageStopButton}"/>
+        </StackLayout>
+        <Label Text="Time Required." x:Name="lblTimerError" HorizontalOptions="Center" TextColor="Red" IsVisible="false"/>
+      </StackLayout>
+    </Grid>
+  </ScrollView>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Musician's Practice Tracker"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeTracker.Pages.MainPage"
+             BackgroundColor="White">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_plus.png" Text="New" Clicked="btnAdd_Clicked" Order="Primary"/>
+    <ToolbarItem Text="Help" Clicked="Help_Clicked" Order="Secondary" Priority="0"/>
+    <ToolbarItem Text="Tools" Clicked="Tools_Clicked" Order="Secondary" Priority="1"/>
+  </ContentPage.ToolbarItems>
+  <ScrollView>
+    <Grid Style="{StaticResource MainPageGrid}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+     
+      <StackLayout Grid.Row="0" Style="{StaticResource MainPageStackLayout}">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Categories_Tapped" />
+        </StackLayout.GestureRecognizers>
+        <Image Source="ic_data_sheet.png" VerticalOptions="Center"/>
+        <Label Text="Categories" Style="{StaticResource MainPageLabel}"/>
+        <Image Style="{StaticResource MainPageImage}"/>
+      </StackLayout>
+
+      <StackLayout Grid.Row="1" Style="{StaticResource MainPageStackLayout}">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Exercises_Tapped" />
+        </StackLayout.GestureRecognizers>
+        <Image Source="ic_dumbbell.png" VerticalOptions="Center"/>
+        <Label Text="Exercises" Style="{StaticResource MainPageLabel}"/>
+        <Image Style="{StaticResource MainPageImage}"/>
+      </StackLayout>
+
+      <StackLayout Grid.Row="2" Style="{StaticResource MainPageStackLayout}">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Practice_Tapped" />
+        </StackLayout.GestureRecognizers>
+        <Image Source="ic_hourglass.png" VerticalOptions="Center"/>
+        <Label Text="Practice Sessions" Style="{StaticResource MainPageLabel}"/>
+        <Image Style="{StaticResource MainPageImage}"/>
+      </StackLayout>
+
+      <StackLayout Grid.Row="3" Style="{StaticResource MainPageStackLayout}">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Statistic_Tapped" />
+        </StackLayout.GestureRecognizers>
+        <Image Source="ic_bar_chart.png" VerticalOptions="Center"/>
+        <Label Text="Statistics" Style="{StaticResource MainPageLabel}"/>
+        <Image Style="{StaticResource MainPageImage}"/>
+      </StackLayout>
+
+    </Grid>
+  </ScrollView>
+
+</ContentPage>

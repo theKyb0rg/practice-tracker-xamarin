@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeTracker.Pages.TutorialPages.TutorialPage"
+             xmlns:local="clr-namespace:PracticeTracker.MarkupExtensions"
+             Title="Tutorial"
+             BackgroundColor="White">
+  <ScrollView BackgroundColor="White" Padding="20">
+    <StackLayout>
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="General Description" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <Label Text="Musician's Practice Tracker is an application made for musicians by musicians. The purpose of this application is to help you monitor different aspects of your practice routine.&#x0a;&#x0a;Listed below are descriptions of each section and the main functionality of the app." TextColor="#333333"/>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Categories" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <Label Text="This section is for you to seperate each exercise by Category. Sorting any exercises you do into Categories will help you identify which areas of your musicality need improvement and which do not.&#x0a;&#x0a;You can add, delete, edit, and search different Categories that pertain to your practice routine." TextColor="#333333"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference imgCategories}, Path=IsLoading}" IsVisible="{Binding Source={x:Reference imgCategories}, Path=IsLoading}"/>
+        <Image Source="{local:EmbeddedImage PracticeTracker.Images.categories_cropped.png}" Aspect="AspectFit" x:Name="imgCategories"/>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Exercises" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <Label Text="This section is for you to store any exercises you plan to work on. Beneath the exercise name it will list the Category it belongs to.&#x0a;&#x0a;You can add, delete, edit, and search different Exercises that pertain to your practice routine. You can also view specific statistics about each exercise." TextColor="#333333"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference imgExercises}, Path=IsLoading}" IsVisible="{Binding Source={x:Reference imgExercises}, Path=IsLoading}"/>
+        <Image Source="{local:EmbeddedImage PracticeTracker.Images.exercises_cropped.png}" Aspect="AspectFit" x:Name="imgExercises" />
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Practice Sessions" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <Label Text="This section is where all of your Practice Session's get stored. For each Practice Session you create, the app will store the exercise practiced, the date, the tempo, the amount of time practiced, and any notes you would like to leave for yourself.&#x0a;&#x0a;You can add, delete, edit, and search different Practice Sessions that pertain to your practice routine." TextColor="#333333"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference imgPractices}, Path=IsLoading}" IsVisible="{Binding Source={x:Reference imgPractices}, Path=IsLoading}"/>
+        <Image Source="{local:EmbeddedImage PracticeTracker.Images.practices_cropped.png}" Aspect="AspectFit" x:Name="imgPractices"/>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Metronome" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <Label Text="The Metronome is located in the Tools section. You specify the speed you would like to set it at in beats per minute (bpm). The maximum speed you can set the tempo at is 250 bpm and there is a beat counter above the start and stop buttons.&#x0a;&#x0a;The Metronome will automatically stop if the application is closed or minimized." TextColor="#333333"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference imgMetronome}, Path=IsLoading}" IsVisible="{Binding Source={x:Reference imgMetronome}, Path=IsLoading}"/>
+        <Image Source="{local:EmbeddedImage PracticeTracker.Images.metronome.png}" Aspect="AspectFit" x:Name="imgMetronome"/>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Timer" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <Label Text="The Timer is located in the Tools section. You specify the amount of time you would like to practice for in minutes. The maximum time you can enter is 24 hours or 1,440 minutes.&#x0a;&#x0a;The Timer will automatically pause if the application is closed or minimized. You can resume where you left off or reset the timer and start over." TextColor="#333333"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference imgTimer}, Path=IsLoading}" IsVisible="{Binding Source={x:Reference imgTimer}, Path=IsLoading}"/>
+        <Image Source="{local:EmbeddedImage PracticeTracker.Images.timer.png}" Aspect="AspectFit" x:Name="imgTimer"/>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Add Button" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+          <Button Image="ic_plus.png" WidthRequest="60" BackgroundColor="#4CAF50" VerticalOptions="Center"/>
+          <Label Text="Tap this to create a new Category, Exercise, or Practice Session." VerticalOptions="Center"/>
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Comments Button" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+          <Button Image="ic_comments_white.png" WidthRequest="60" BackgroundColor="Orange" VerticalOptions="Center"/>
+          <Label Text="Tap this to view the comments you made about a specific Practice Session." VerticalOptions="Center"/>
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Delete Button" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+          <Button Image="ic_trash.png" WidthRequest="60" BackgroundColor="Red" VerticalOptions="Center"/>
+          <Label Text="Tap this to delete a Category, Exercise, or Practice Session. You will be prompted to confirm deletion." VerticalOptions="Center"/>
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Edit Button" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+          <Button Image="ic_edit_file.png" WidthRequest="60" VerticalOptions="Center"/>
+          <Label Text="Tap this to edit a Category, Exercise, or Practice Session." VerticalOptions="Center"/>
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout Margin="20,0,20,20">
+        <Label Text="Statistics Button" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <StackLayout VerticalOptions="Center" Orientation="Horizontal" >
+          <Button Image="ic_bar_chart_white.png" WidthRequest="60" BackgroundColor="#2196F3" VerticalOptions="Center"/>
+          <Label Text="Tap this to get statistics about a specific Exercise." VerticalOptions="Center"/>
+        </StackLayout>
+      </StackLayout>
+      <StackLayout Margin="20,0,20,20">
+
+        <Label Text="Search Button" TextColor="#333333" FontAttributes="Bold" FontSize="20"/>
+        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+          <Button Image="ic_search.png" WidthRequest="60" BackgroundColor="#4CAF50" VerticalOptions="Center"/>
+          <Label Text="Tap this to search Categories, Exercises, or Practice Sessions." VerticalOptions="Center"/>
+        </StackLayout>
+        <Button Text="Exit Tutorial" Clicked="btnExit_Clicked"/>
+      </StackLayout>
+    </StackLayout>
+
+  </ScrollView>
+</ContentPage>

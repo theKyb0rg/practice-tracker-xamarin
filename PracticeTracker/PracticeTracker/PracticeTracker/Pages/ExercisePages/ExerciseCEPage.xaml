@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeTracker.Pages.ExercisePages.ExerciseCEPage"
+             BackgroundColor="White">
+  <TableView Style="{StaticResource TableViewStyle}">
+    <TableRoot>
+      <TableSection Title="Exercise Information">
+        <ViewCell>
+          <Grid Style="{StaticResource TableViewGridPadding}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="75"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="ic_dumbbell.png" Grid.Column="0"/>
+            <StackLayout Grid.Column="1" VerticalOptions="Center">
+              <Entry Keyboard="Text" x:Name="txtName" Placeholder="Name" Style="{StaticResource V-Center-H-FillAndExpand}"/>
+              <Label x:Name="lblNameError" IsVisible="false" Text="Name is required." Style="{StaticResource ErrorLabel}"/>
+            </StackLayout>
+          </Grid>
+        </ViewCell>
+        <ViewCell>
+          <Grid Style="{StaticResource TableViewGridPadding}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="75"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="ic_finish_flag.png" Grid.Column="0"/>
+            <StackLayout Grid.Column="1" VerticalOptions="Center">
+              <Entry Keyboard="Numeric" x:Name="txtGoal" Placeholder="Goal (bpm)" Style="{StaticResource V-Center-H-FillAndExpand}"/>
+              <Label x:Name="lblGoalError" IsVisible="false" Text="Goal is required." Style="{StaticResource ErrorLabel}"/>
+            </StackLayout>
+          </Grid>
+        </ViewCell>
+        <ViewCell Tapped="lblCategory_Tapped">
+          <Grid Style="{StaticResource TableViewGridPadding}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="75"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="ic_data_sheet.png" Grid.Column="0"/>
+            <StackLayout Grid.Column="1" VerticalOptions="Center">
+              <Label x:Name="lblCategory" Text="Choose a Category..." FontSize="18" TextColor="#333333"  Style="{StaticResource V-Center-H-FillAndExpand}"/>
+              <Label x:Name="lblCategoryError" IsVisible="false" Text="Category is required." Style="{StaticResource ErrorLabel}"/>
+            </StackLayout>
+          </Grid>
+        </ViewCell>
+        <ViewCell>
+          <StackLayout VerticalOptions="Center">
+            <StackLayout.Margin>
+              <OnPlatform x:TypeArguments="Thickness" Android="50,0" WinPhone="0"/>
+            </StackLayout.Margin>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+              <Button Text="Save" Clicked="btnSave_Clicked" Style="{StaticResource AddButtonStyle}"/>
+              <Button Text="Reset" Clicked="btnReset_Clicked" Style="{StaticResource ResetButtonStyle}"/>
+            </StackLayout>
+            <Label x:Name="lblResult" IsVisible="false" HorizontalOptions="Center"/>
+          </StackLayout>
+        </ViewCell>
+      </TableSection>
+    </TableRoot>
+  </TableView>
+</ContentPage>
